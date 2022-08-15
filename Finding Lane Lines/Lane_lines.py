@@ -1,5 +1,4 @@
-from ossaudiodev import SNDCTL_DSP_GETSPDIF
-from turtle import left
+
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
