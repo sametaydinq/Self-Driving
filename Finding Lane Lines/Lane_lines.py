@@ -72,6 +72,7 @@ cv2.waitKey(0)
 
 cap = cv2.VideoCapture("Finding Lane Lines/test2.mp4")
 
+
 while(cap.isOpened()):
     _,frame = cap.read()
     canny_image = canny(frame)
@@ -81,8 +82,36 @@ while(cap.isOpened()):
     line_image = display_lines(frame,averaged_lines)
     combo_image = cv2.addWeighted(frame,0.8,line_image,1,1)
 
+
+
+        
+    topleft = (470,445)
+    botleft = (300,700)
+    topright = (750,445)
+    botright = (1000,700)
+
+    cv2.circle(frame, topleft , 5, (0,0,255), -1)
+    cv2.circle(frame, botleft , 5, (0,0,255), -1)
+    cv2.circle(frame, topright , 5, (0,0,255), -1)
+    cv2.circle(frame, botright , 5, (0,0,255), -1)
+
+
+    pts1 = np.float32([topleft,botleft , topright , botright])
+    pts2 = np.float32([[0,0], [0,480],[640,0], [640,480]])
+
+    matrix = cv2.getPerspectiveTransform(pts1,pts2)
+    trans_frame = cv2.warpPerspective(frame,matrix,(640,480))
+
+    cv2.imshow("bird eyes",trans_frame)
     cv2.imshow("result",combo_image)
+    
     if cv2.waitKey(1) & 0xFF == ord("q"):break
+
+
+#bird eye
+    
+  
+    
     
 cap.release()
 cv2.destroyAllWindows()
