@@ -13,5 +13,9 @@ Uygulama içerisinden aldığım şerit fotoğraflarını keras kullanarak bir s
 
 
 ## Test videosu:
-https://user-images.githubusercontent.com/69009934/209350911-bb387e4e-e831-4a36-aa57-a3410cba1202.mp4
+
+
+
+
+https://user-images.githubusercontent.com/69009934/209351159-b0163bfa-5b86-4300-a11c-8469e9a75c40.mp4
 
